@@ -1,248 +1,222 @@
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:Arial,sans-serif;
+
 }
 
 body{
 
-    background:#E8F5E9;
-    min-height:100vh;
+    background:#0F172A;
+    color:#E2E8F0;
 
 }
 
+section{
+
+    margin:120px auto;
+    width:85%;
+    max-width:1400px;
+
+}
 
 header{
 
     text-align:center;
-    padding:30px;
+    padding:80px 20px;
 
 }
 
-.banner{
+header h1{
 
-    width:300px;
-    margin-bottom:20px;
-
-}
-
-
-h1{
-
-    color:#2E7D32;
-    font-size:3rem;
+    font-size:4rem;
+    color:#4ADE80;
 
 }
-
 
 header p{
 
-    color:#558B2F;
-    font-size:1.2rem;
+    margin-top:15px;
+    color:#94A3B8;
 
 }
 
+.sobre{
 
-.curiosidade{
-
-    width:80%;
-    margin:auto;
-    background:white;
-
-    padding:20px;
-
-    border-left:8px solid #FFD54F;
-
-    border-radius:15px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    background:#1E293B;
+    padding:40px;
+    border-radius:25px;
 
 }
 
+.sobre h2{
 
-.progresso{
-
-    width:80%;
-    margin:30px auto;
-
-}
-
-
-.barra{
-
-    height:20px;
-    background:#ccc;
-
-    border-radius:20px;
-
-    overflow:hidden;
+    margin-bottom:25px;
+    color:#4ADE80;
 
 }
 
+.sobre p{
 
-#preenchimento{
+    line-height:1.8;
 
-    width:0%;
+}
 
-    height:100%;
+.flashcards-section h2,
+.quiz h2{
 
-    background:#4CAF50;
+    color:#4ADE80;
+
+}
+
+.flashcards-section p,
+.quiz p{
+
+    margin-top:15px;
+    color:#94A3B8;
+
+}
+
+.cards{
+
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+
+    gap:40px;
+
+}
+
+.card{
+
+    height:260px;
+
+    position:relative;
+
+    transform-style:preserve-3d;
 
     transition:1s;
 
-}
-
-
-#contador{
-
-    display:block;
-
-    margin-top:10px;
-
-    text-align:right;
+    cursor:pointer;
 
 }
 
+.card:hover{
 
-main{
+    transform:translateY(-10px);
+
+}
+
+.card.flip{
+
+    transform:rotateY(180deg);
+
+}
+
+.front,
+.back{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    border-radius:25px;
 
     display:flex;
 
     justify-content:center;
 
-}
-
-
-#flashcard{
-
-    width:700px;
-
-    min-height:400px;
-
-    background:white;
-
-    padding:40px;
-
-    border-radius:25px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    align-items:center;
 
     text-align:center;
 
+    padding:30px;
+
+    backface-visibility:hidden;
+
+    font-size:1.4rem;
+
+    box-shadow:
+    0 0 25px rgba(0,0,0,.3);
+
 }
 
+.front{
 
-#pergunta{
+    background:#1E293B;
 
-    color:#2E7D32;
-
-    font-size:2rem;
+    border:2px solid #4ADE80;
 
 }
 
+.back{
 
-#mostrarResposta{
+    background:#22C55E;
+
+    color:white;
+
+    transform:rotateY(180deg);
+
+}
+
+.pergunta-box{
 
     margin-top:40px;
 
-    padding:15px 30px;
-
-    border:none;
-
-    background:#FFD54F;
-
-    cursor:pointer;
-
-    border-radius:15px;
-
-    font-size:18px;
-
-}
-
-
-#resposta{
-
-    margin-top:30px;
-
-    display:none;
-
-    font-size:1.3rem;
-
-}
-
-
-#acoes{
-
-    margin-top:40px;
-
-    display:none;
-
-    gap:20px;
-
-    justify-content:center;
-
-}
-
-
-#acoes button{
-
-    padding:15px 30px;
-
-    border:none;
-
-    border-radius:15px;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-}
-
-
-.acerto{
-
-    background:#4CAF50;
-    color:white;
-
-}
-
-
-.erro{
-
-    background:#E53935;
-    color:white;
-
-}
-
-
-#comentario{
-
-    display:none;
-
-    margin-top:30px;
-
-    background:#FFF8E1;
-
-    padding:20px;
-
-    border-radius:15px;
-
-}
-
-
-#final{
-
-    display:none;
-
-    width:700px;
-
-    background:white;
+    background:#1E293B;
 
     padding:50px;
 
-    border-radius:20px;
+    border-radius:25px;
 
-    text-align:center;
+}
+
+.pergunta-box h3{
+
+    margin-bottom:40px;
+
+}
+
+.alternativa{
+
+    width:100%;
+
+    margin-bottom:20px;
+
+    padding:20px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#334155;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.alternativa:hover{
+
+    background:#4ADE80;
+
+    color:black;
+
+}
+
+#resultado{
+
+    margin-top:30px;
+
+    font-size:1.2rem;
 
 }
