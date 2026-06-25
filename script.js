@@ -132,4 +132,5 @@ function verificar(resposta) {
 }
 
 
-carregarPergunta();
+carregarPergunta(document.getElementById("contadorQuiz").innerText =
+`Pergunta ${indice + 1} de ${perguntas.length}`;);
