@@ -1,98 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho 2026 - Flashcards</title>
+    <title>Agrinho 2026</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header>
-        <h1>🌱 AGRINHO 2026</h1>
-        <p>Sustentabilidade, Meio Ambiente e Agronegócio</p>
+
+        <img
+            src="agrinho.png"
+            class="banner"
+            alt="Personagens do Agrinho">
+
+        <h1>AGRINHO 2026</h1>
+
+        <p>
+            Sustentabilidade e Meio Ambiente
+        </p>
+
     </header>
 
-    <section class="personagem">
-        <div class="avatar">👨‍🌾</div>
 
-        <div class="fala">
-            <h2>Professor Verde</h2>
-            <p id="mensagem">
-                Olá! Vamos aprender como cuidar do meio ambiente e produzir alimentos de forma sustentável?
-            </p>
-        </div>
+    <section class="curiosidade">
+
+        <h2>🌎 Curiosidade Verde</h2>
+
+        <p id="curiosidadeTexto"></p>
+
     </section>
+
+
+    <section class="progresso">
+
+        <div class="barra">
+
+            <div id="preenchimento"></div>
+
+        </div>
+
+        <span id="contador">
+            1/8
+        </span>
+
+    </section>
+
 
     <main>
 
-        <div class="card-container">
+        <div id="flashcard">
 
-            <div class="flashcard">
-                <div class="frente">
-                    O que é sustentabilidade?
-                </div>
+            <h2 id="pergunta"></h2>
 
-                <div class="verso">
-                    É utilizar os recursos naturais de forma consciente, garantindo qualidade de vida para as futuras gerações.
-                </div>
+            <button id="mostrarResposta">
+                Mostrar resposta
+            </button>
+
+            <p id="resposta"></p>
+
+
+            <div id="acoes">
+
+                <button class="acerto">
+                    ✅ Acertei
+                </button>
+
+                <button class="erro">
+                    ❌ Errei
+                </button>
+
             </div>
 
-            <div class="flashcard">
-                <div class="frente">
-                    Como o agronegócio pode ajudar o meio ambiente?
-                </div>
 
-                <div class="verso">
-                    Utilizando práticas sustentáveis, preservando nascentes, reduzindo desperdícios e protegendo a biodiversidade.
-                </div>
+            <div id="comentario">
+
+                <strong>Dica Ambiental:</strong>
+
+                <p id="textoComentario"></p>
+
             </div>
 
-            <div class="flashcard">
-                <div class="frente">
-                    O que é agricultura sustentável?
-                </div>
+        </div>
 
-                <div class="verso">
-                    É a produção agrícola que respeita o meio ambiente e utiliza os recursos naturais de maneira equilibrada.
-                </div>
-            </div>
 
-            <div class="flashcard">
-                <div class="frente">
-                    Por que preservar as florestas?
-                </div>
+        <div id="final">
 
-                <div class="verso">
-                    Porque elas ajudam no clima, protegem animais, evitam erosões e mantêm os rios saudáveis.
-                </div>
-            </div>
+            <h2>🌱 Parabéns!</h2>
 
-            <div class="flashcard">
-                <div class="frente">
-                    O que significa reciclagem?
-                </div>
-
-                <div class="verso">
-                    É transformar materiais usados em novos produtos, reduzindo o lixo e a poluição ambiental.
-                </div>
-            </div>
-
-            <div class="flashcard">
-                <div class="frente">
-                    Como economizar água no campo?
-                </div>
-
-                <div class="verso">
-                    Utilizando irrigação eficiente, protegendo nascentes e evitando desperdícios durante a produção.
-                </div>
-            </div>
+            <p id="pontuacaoFinal"></p>
 
         </div>
 
     </main>
 
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
