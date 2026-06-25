@@ -1,248 +1,212 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+const cards = [
 
-body{
+    {
 
-    background:#E8F5E9;
-    min-height:100vh;
+        pergunta:"O que é sustentabilidade?",
 
-}
+        resposta:"É usar os recursos naturais sem comprometer as futuras gerações.",
 
+        comentario:"Quando cuidamos da natureza hoje, garantimos qualidade de vida para amanhã."
 
-header{
+    },
 
-    text-align:center;
-    padding:30px;
+    {
 
-}
+        pergunta:"Por que preservar as florestas?",
 
-.banner{
+        resposta:"Elas ajudam a manter o clima, proteger rios e conservar espécies.",
 
-    width:300px;
-    margin-bottom:20px;
+        comentario:"As árvores absorvem gás carbônico e produzem oxigênio para todos."
 
-}
+    },
 
+    {
 
-h1{
+        pergunta:"O que é reciclagem?",
 
-    color:#2E7D32;
-    font-size:3rem;
+        resposta:"É transformar materiais usados em novos produtos.",
 
-}
+        comentario:"Reciclar reduz o lixo e economiza recursos naturais."
 
+    },
 
-header p{
+    {
 
-    color:#558B2F;
-    font-size:1.2rem;
+        pergunta:"Como economizar água no campo?",
 
-}
+        resposta:"Com irrigação eficiente e proteção das nascentes.",
 
+        comentario:"A água é um recurso essencial para a agricultura sustentável."
 
-.curiosidade{
+    },
 
-    width:80%;
-    margin:auto;
-    background:white;
+    {
 
-    padding:20px;
+        pergunta:"O que é biodiversidade?",
 
-    border-left:8px solid #FFD54F;
+        resposta:"É a variedade de seres vivos existentes em um ambiente.",
 
-    border-radius:15px;
+        comentario:"Quanto maior a biodiversidade, mais equilibrado é o ecossistema."
 
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    },
 
-}
+    {
 
+        pergunta:"O que é energia renovável?",
 
-.progresso{
+        resposta:"Energia obtida de fontes que se renovam naturalmente.",
 
-    width:80%;
-    margin:30px auto;
+        comentario:"Solar e eólica são exemplos importantes."
 
-}
+    },
 
+    {
 
-.barra{
+        pergunta:"Por que evitar queimadas?",
 
-    height:20px;
-    background:#ccc;
+        resposta:"Porque elas prejudicam o solo, os animais e o clima.",
 
-    border-radius:20px;
+        comentario:"Queimadas liberam grandes quantidades de poluentes."
 
-    overflow:hidden;
+    },
 
-}
+    {
 
+        pergunta:"O que significa consumo consciente?",
 
-#preenchimento{
+        resposta:"Comprar e utilizar apenas o necessário.",
 
-    width:0%;
+        comentario:"Consumir menos reduz impactos ambientais."
 
-    height:100%;
+    }
 
-    background:#4CAF50;
+];
 
-    transition:1s;
 
-}
+const curiosidades = [
 
+    "Uma árvore adulta pode absorver cerca de 22 kg de CO₂ por ano. 🌳",
 
-#contador{
+    "A reciclagem de uma tonelada de papel pode salvar aproximadamente 20 árvores. ♻️",
 
-    display:block;
+    "O Brasil possui uma das maiores biodiversidades do planeta. 🦜",
 
-    margin-top:10px;
+    "A energia solar é uma das fontes renováveis que mais cresce no mundo. ☀️"
 
-    text-align:right;
+];
 
-}
 
+const pergunta = document.getElementById("pergunta");
 
-main{
+const resposta = document.getElementById("resposta");
 
-    display:flex;
+const comentario = document.getElementById("comentario");
 
-    justify-content:center;
+const textoComentario = document.getElementById("textoComentario");
 
-}
+const mostrarResposta = document.getElementById("mostrarResposta");
 
+const acerto = document.querySelector(".acerto");
 
-#flashcard{
+const erro = document.querySelector(".erro");
 
-    width:700px;
+const acoes = document.getElementById("acoes");
 
-    min-height:400px;
+const preenchimento = document.getElementById("preenchimento");
 
-    background:white;
+const contador = document.getElementById("contador");
 
-    padding:40px;
+const final = document.getElementById("final");
 
-    border-radius:25px;
+const flashcard = document.getElementById("flashcard");
 
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+const pontuacaoFinal = document.getElementById("pontuacaoFinal");
 
-    text-align:center;
+const curiosidadeTexto =
+document.getElementById("curiosidadeTexto");
 
-}
 
+let atual = 0;
 
-#pergunta{
+let pontos = 0;
 
-    color:#2E7D32;
 
-    font-size:2rem;
+curiosidadeTexto.innerText =
 
-}
+curiosidades[Math.floor(Math.random()*curiosidades.length)];
 
 
-#mostrarResposta{
+function carregarCard(){
 
-    margin-top:40px;
+    resposta.style.display="none";
 
-    padding:15px 30px;
+    comentario.style.display="none";
 
-    border:none;
+    acoes.style.display="none";
 
-    background:#FFD54F;
+    pergunta.innerText = cards[atual].pergunta;
 
-    cursor:pointer;
+    resposta.innerText = cards[atual].resposta;
 
-    border-radius:15px;
+    textoComentario.innerText = cards[atual].comentario;
 
-    font-size:18px;
+    contador.innerText = `${atual+1}/${cards.length}`;
 
-}
+    preenchimento.style.width =
 
-
-#resposta{
-
-    margin-top:30px;
-
-    display:none;
-
-    font-size:1.3rem;
+    ((atual)/cards.length)*100 + "%";
 
 }
 
 
-#acoes{
+mostrarResposta.onclick = ()=>{
 
-    margin-top:40px;
+    resposta.style.display="block";
 
-    display:none;
+    acoes.style.display="flex";
 
-    gap:20px;
-
-    justify-content:center;
-
-}
+};
 
 
-#acoes button{
+function proximo(){
 
-    padding:15px 30px;
+    atual++;
 
-    border:none;
+    if(atual >= cards.length){
 
-    border-radius:15px;
+        flashcard.style.display="none";
 
-    cursor:pointer;
+        final.style.display="block";
 
-    font-size:18px;
+        pontuacaoFinal.innerText =
 
-}
+        `Você acertou ${pontos} de ${cards.length} questões!`;
 
+        return;
 
-.acerto{
+    }
 
-    background:#4CAF50;
-    color:white;
+    carregarCard();
 
 }
 
 
-.erro{
+acerto.onclick = ()=>{
 
-    background:#E53935;
-    color:white;
+    pontos++;
 
-}
+    proximo();
 
-
-#comentario{
-
-    display:none;
-
-    margin-top:30px;
-
-    background:#FFF8E1;
-
-    padding:20px;
-
-    border-radius:15px;
-
-}
+};
 
 
-#final{
+erro.onclick = ()=>{
 
-    display:none;
+    comentario.style.display="block";
 
-    width:700px;
+    setTimeout(proximo,3000);
 
-    background:white;
+};
 
-    padding:50px;
 
-    border-radius:20px;
-
-    text-align:center;
-
-}
+carregarCard();
