@@ -1,3 +1,16 @@
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        card.classList.toggle("flip");
+
+    });
+
+});
+
+
 const perguntas = [
 
     {
@@ -47,12 +60,24 @@ const perguntas = [
 ];
 
 
-const perguntaTexto = document.getElementById("pergunta");
-const resultado = document.getElementById("resultado");
+const perguntaTexto =
+document.getElementById("pergunta");
+
+const resultado =
+document.getElementById("resultado");
+
 const alternativasContainer =
 document.querySelector(".pergunta-box");
 
+const contadorQuiz =
+document.getElementById("contadorQuiz");
+
+const botoes =
+document.querySelectorAll(".alternativa");
+
+
 let indice = 0;
+
 let pontos = 0;
 
 
@@ -65,7 +90,7 @@ function carregarPergunta() {
             <h2>🎉 Quiz Finalizado!</h2>
 
             <p>
-                Você acertou ${pontos} de ${perguntas.length} perguntas.
+                Você acertou ${pontos} de ${perguntas.length} perguntas!
             </p>
 
         `;
@@ -76,10 +101,13 @@ function carregarPergunta() {
 
     const atual = perguntas[indice];
 
-    perguntaTexto.innerText = atual.pergunta;
 
-    const botoes =
-    document.querySelectorAll(".alternativa");
+    contadorQuiz.innerText =
+    `Pergunta ${indice + 1} de ${perguntas.length}`;
+
+
+    perguntaTexto.innerText =
+    atual.pergunta;
 
 
     botoes.forEach((botao, i) => {
@@ -132,5 +160,4 @@ function verificar(resposta) {
 }
 
 
-carregarPergunta(document.getElementById("contadorQuiz").innerText =
-`Pergunta ${indice + 1} de ${perguntas.length}`;);
+carregarPergunta();
