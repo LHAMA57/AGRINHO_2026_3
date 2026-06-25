@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026 - Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌱 AGRINHO 2026</h1>
+        <p>Sustentabilidade, Meio Ambiente e Agronegócio</p>
+    </header>
+
+    <section class="personagem">
+        <div class="avatar">👨‍🌾</div>
+
+        <div class="fala">
+            <h2>Professor Verde</h2>
+            <p id="mensagem">
+                Olá! Vamos aprender como cuidar do meio ambiente e produzir alimentos de forma sustentável?
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="card-container">
+
+            <div class="flashcard">
+                <div class="frente">
+                    O que é sustentabilidade?
+                </div>
+
+                <div class="verso">
+                    É utilizar os recursos naturais de forma consciente, garantindo qualidade de vida para as futuras gerações.
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="frente">
+                    Como o agronegócio pode ajudar o meio ambiente?
+                </div>
+
+                <div class="verso">
+                    Utilizando práticas sustentáveis, preservando nascentes, reduzindo desperdícios e protegendo a biodiversidade.
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="frente">
+                    O que é agricultura sustentável?
+                </div>
+
+                <div class="verso">
+                    É a produção agrícola que respeita o meio ambiente e utiliza os recursos naturais de maneira equilibrada.
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="frente">
+                    Por que preservar as florestas?
+                </div>
+
+                <div class="verso">
+                    Porque elas ajudam no clima, protegem animais, evitam erosões e mantêm os rios saudáveis.
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="frente">
+                    O que significa reciclagem?
+                </div>
+
+                <div class="verso">
+                    É transformar materiais usados em novos produtos, reduzindo o lixo e a poluição ambiental.
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="frente">
+                    Como economizar água no campo?
+                </div>
+
+                <div class="verso">
+                    Utilizando irrigação eficiente, protegendo nascentes e evitando desperdícios durante a produção.
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

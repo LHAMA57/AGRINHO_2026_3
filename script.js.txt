@@ -1,0 +1,34 @@
+const cards = document.querySelectorAll(".flashcard");
+
+const mensagens = [
+
+    "Muito bem! A natureza agradece quando aprendemos a cuidar dela! 🌳",
+
+    "Pequenas atitudes sustentáveis fazem uma grande diferença! 💚",
+
+    "O campo e a cidade precisam trabalhar juntos pelo planeta! 🌎",
+
+    "A agricultura sustentável protege o futuro das próximas gerações! 🌱",
+
+    "Preservar a água é essencial para toda a vida! 💧",
+
+    "Reciclar é uma forma inteligente de cuidar do meio ambiente! ♻️"
+
+];
+
+const textoPersonagem = document.getElementById("mensagem");
+
+
+cards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        card.classList.toggle("virado");
+
+        let sorteio = Math.floor(Math.random() * mensagens.length);
+
+        textoPersonagem.innerText = mensagens[sorteio];
+
+    });
+
+});
