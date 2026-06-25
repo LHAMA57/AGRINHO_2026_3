@@ -1,45 +1,135 @@
-const cards = document.querySelectorAll(".card");
+const perguntas = [
 
-cards.forEach(card=>{
+    {
+        pergunta: "Qual prática representa sustentabilidade?",
+        alternativas: [
+            "Desmatamento ilegal",
+            "Reutilização da água da chuva",
+            "Queimadas frequentes",
+            "Desperdício de alimentos"
+        ],
+        correta: 1
+    },
 
-    card.addEventListener("click",()=>{
+    {
+        pergunta: "O que é biodiversidade?",
+        alternativas: [
+            "Variedade de seres vivos",
+            "Tipo de solo agrícola",
+            "Sistema de irrigação",
+            "Método de reciclagem"
+        ],
+        correta: 0
+    },
 
-        card.classList.toggle("flip");
+    {
+        pergunta: "Qual é uma fonte de energia renovável?",
+        alternativas: [
+            "Carvão mineral",
+            "Petróleo",
+            "Energia solar",
+            "Gasolina"
+        ],
+        correta: 2
+    },
+
+    {
+        pergunta: "Por que devemos economizar água?",
+        alternativas: [
+            "Porque ela é um recurso limitado",
+            "Para aumentar a poluição",
+            "Não existe motivo",
+            "Para prejudicar a agricultura"
+        ],
+        correta: 0
+    }
+
+];
+
+
+const perguntaTexto = document.getElementById("pergunta");
+const resultado = document.getElementById("resultado");
+const alternativasContainer =
+document.querySelector(".pergunta-box");
+
+let indice = 0;
+let pontos = 0;
+
+
+function carregarPergunta() {
+
+    if (indice >= perguntas.length) {
+
+        alternativasContainer.innerHTML = `
+
+            <h2>🎉 Quiz Finalizado!</h2>
+
+            <p>
+                Você acertou ${pontos} de ${perguntas.length} perguntas.
+            </p>
+
+        `;
+
+        return;
+    }
+
+
+    const atual = perguntas[indice];
+
+    perguntaTexto.innerText = atual.pergunta;
+
+    const botoes =
+    document.querySelectorAll(".alternativa");
+
+
+    botoes.forEach((botao, i) => {
+
+        botao.innerText =
+        atual.alternativas[i];
+
+        botao.onclick = () => verificar(i);
 
     });
 
-});
+}
 
 
-const alternativas =
-document.querySelectorAll(".alternativa");
+function verificar(resposta) {
 
-const resultado =
-document.getElementById("resultado");
+    if (resposta === perguntas[indice].correta) {
+
+        resultado.innerHTML =
+        "✅ Resposta correta!";
+
+        resultado.style.color =
+        "#4ADE80";
+
+        pontos++;
+
+    }
+
+    else {
+
+        resultado.innerHTML =
+        "❌ Resposta incorreta!";
+
+        resultado.style.color =
+        "#EF4444";
+
+    }
 
 
-alternativas.forEach(botao=>{
+    setTimeout(() => {
 
-    botao.addEventListener("click",()=>{
+        resultado.innerHTML = "";
 
-        if(botao.classList.contains("correta")){
+        indice++;
 
-            resultado.innerHTML=
-            "✅ Correto! Reutilizar água da chuva é uma prática sustentável.";
+        carregarPergunta();
 
-            resultado.style.color="#4ADE80";
+    }, 1500);
 
-        }
+}
 
-        else{
 
-            resultado.innerHTML=
-            "❌ Incorreto. Pense em ações que preservam os recursos naturais.";
-
-            resultado.style.color="#EF4444";
-
-        }
-
-    });
-
-});
+carregarPergunta();
