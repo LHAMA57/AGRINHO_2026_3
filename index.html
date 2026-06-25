@@ -2,105 +2,231 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho 2026</title>
+
+    <title>Agrinho 2026 | Sustentabilidade</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <header>
+<header>
 
-        <img
-            src="agrinho.png"
-            class="banner"
-            alt="Personagens do Agrinho">
+    <h1>AGRINHO 2026</h1>
 
-        <h1>AGRINHO 2026</h1>
+    <p>
+        Meio Ambiente, Sustentabilidade e Futuro
+    </p>
 
-        <p>
-            Sustentabilidade e Meio Ambiente
-        </p>
-
-    </header>
+</header>
 
 
-    <section class="curiosidade">
+<section class="sobre">
 
-        <h2>🌎 Curiosidade Verde</h2>
+    <h2>🌱 O que é Sustentabilidade?</h2>
 
-        <p id="curiosidadeTexto"></p>
+    <p>
 
-    </section>
+        Sustentabilidade significa utilizar os recursos naturais de maneira
+        responsável, garantindo o equilíbrio entre desenvolvimento econômico,
+        preservação ambiental e qualidade de vida para as futuras gerações.
 
+    </p>
 
-    <section class="progresso">
-
-        <div class="barra">
-
-            <div id="preenchimento"></div>
-
-        </div>
-
-        <span id="contador">
-            1/8
-        </span>
-
-    </section>
+</section>
 
 
-    <main>
+<section class="flashcards-section">
 
-        <div id="flashcard">
+    <h2>📚 Flashcards Ambientais</h2>
 
-            <h2 id="pergunta"></h2>
+    <p>
+        Clique nos cartões para descobrir as respostas.
+    </p>
 
-            <button id="mostrarResposta">
-                Mostrar resposta
-            </button>
+    <div class="cards">
 
-            <p id="resposta"></p>
+        <div class="card">
 
-
-            <div id="acoes">
-
-                <button class="acerto">
-                    ✅ Acertei
-                </button>
-
-                <button class="erro">
-                    ❌ Errei
-                </button>
-
+            <div class="front">
+                O que é sustentabilidade?
             </div>
 
-
-            <div id="comentario">
-
-                <strong>Dica Ambiental:</strong>
-
-                <p id="textoComentario"></p>
-
+            <div class="back">
+                Utilizar recursos naturais sem comprometer as futuras gerações.
             </div>
 
         </div>
 
 
-        <div id="final">
+        <div class="card">
 
-            <h2>🌱 Parabéns!</h2>
+            <div class="front">
+                O que é biodiversidade?
+            </div>
 
-            <p id="pontuacaoFinal"></p>
+            <div class="back">
+                É a variedade de seres vivos existentes em um ecossistema.
+            </div>
 
         </div>
 
-    </main>
+
+        <div class="card">
+
+            <div class="front">
+                Por que preservar as florestas?
+            </div>
+
+            <div class="back">
+                Elas regulam o clima, protegem rios e abrigam milhares de espécies.
+            </div>
+
+        </div>
 
 
-    <script src="script.js"></script>
+        <div class="card">
+
+            <div class="front">
+                O que significa reciclagem?
+            </div>
+
+            <div class="back">
+                Transformar resíduos em novos materiais ou produtos.
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="front">
+                O que é energia renovável?
+            </div>
+
+            <div class="back">
+                Energia obtida de fontes naturais que se renovam constantemente.
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="front">
+                Como economizar água no campo?
+            </div>
+
+            <div class="back">
+                Utilizando irrigação eficiente e protegendo nascentes.
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="front">
+                O que é coleta seletiva?
+            </div>
+
+            <div class="back">
+                Separação correta dos resíduos para facilitar a reciclagem.
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="front">
+                O que são áreas de preservação permanente?
+            </div>
+
+            <div class="back">
+                Regiões protegidas para conservar rios, encostas e biodiversidade.
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="front">
+                O que é consumo consciente?
+            </div>
+
+            <div class="back">
+                Comprar e utilizar apenas o necessário, evitando desperdícios.
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="front">
+                Como o agronegócio pode ser sustentável?
+            </div>
+
+            <div class="back">
+                Utilizando tecnologias limpas e preservando recursos naturais.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="quiz">
+
+    <h2>🧠 Quiz Ambiental</h2>
+
+    <p>
+        Responda à pergunta abaixo:
+    </p>
+
+
+    <div class="pergunta-box">
+
+        <h3 id="pergunta">
+
+            Qual alternativa representa uma prática sustentável?
+
+        </h3>
+
+
+        <button class="alternativa">
+            Desmatamento ilegal
+        </button>
+
+        <button class="alternativa correta">
+            Reutilização da água da chuva
+        </button>
+
+        <button class="alternativa">
+            Queimadas frequentes
+        </button>
+
+        <button class="alternativa">
+            Desperdício de alimentos
+        </button>
+
+
+        <div id="resultado"></div>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
